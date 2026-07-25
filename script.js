@@ -1,24 +1,15 @@
-// Loader
+window.addEventListener("DOMContentLoaded",()=>{
 
-setTimeout(() => {
-
+setTimeout(()=>{
 document.getElementById("loader").style.display="none";
-
 document.getElementById("hero").classList.remove("hidden");
-
 document.body.style.overflow="auto";
-
 },4000);
 
-
-// Gift Button
-
 const startBtn=document.getElementById("startBtn");
-
 const envelope=document.getElementById("envelope");
-
 const letter=document.getElementById("typedLetter");
-
+const letterSection=document.getElementById("letterSection");
 
 const message=`Happy Birthday to the most wonderful person in my life ❤️
 
@@ -38,38 +29,24 @@ Love,
 
 Chandra ❤️`;
 
-
-startBtn.onclick=()=>{
-
-document.getElementById("letterSection").scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-setTimeout(()=>{
-
-envelope.classList.add("open");
-
-typeWriter();
-
-},900);
-
-}
-
-
 let i=0;
 
 function typeWriter(){
-
-if(i<message.length){
-
-letter.innerHTML+=message.charAt(i);
-
-i++;
-
-setTimeout(typeWriter,35);
-
+ if(i<message.length){
+   letter.innerHTML+=message.charAt(i);
+   i++;
+   setTimeout(typeWriter,35);
+ }
 }
 
-}
+startBtn.addEventListener("click",()=>{
+ letterSection.scrollIntoView({behavior:"smooth"});
+ setTimeout(()=>{
+   envelope.classList.add("open");
+   letter.innerHTML="";
+   i=0;
+   typeWriter();
+ },800);
+});
+
+});
