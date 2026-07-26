@@ -233,12 +233,7 @@ const galleryPhotos = [
   { src: 'assets/images/photo-4.jpg', caption: 'quiet moments' },
   { src: 'assets/images/photo-5.jpg', caption: 'celebrating together' },
   { src: 'assets/images/photo-6.jpg', caption: 'the trip we loved' },
-  { src: 'assets/images/photo-7.jpg', caption: 'just us' },
-  { src: 'assets/images/photo-8.jpg', caption: 'late night talks' },
-  { src: 'assets/images/photo-9.jpg', caption: 'that big smile' },
-  { src: 'assets/images/photo-10.jpg', caption: 'holding hands' },
-  { src: 'assets/images/photo-11.jpg', caption: 'dancing around' },
-  { src: 'assets/images/photo-12.jpg', caption: 'always us' }
+  { src: 'assets/images/photo-7.jpg', caption: 'just us' }
 ];
 
 galleryPhotos.forEach((photo, i) => {
