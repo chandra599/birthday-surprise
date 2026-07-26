@@ -225,7 +225,30 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================= */
   /* 7. GALLERY                      */
   /* ============================= */
+const galleryGrid = document.getElementById('gallery-grid');
+const galleryPhotos = [
+  { src: 'assets/images/photo-1.jpg', caption: 'that afternoon' },
+  { src: 'assets/images/photo-2.jpg', caption: 'our favorite spot' },
+  { src: 'assets/images/photo-3.jpg', caption: 'silly faces' },
+  { src: 'assets/images/photo-4.jpg', caption: 'quiet moments' },
+  { src: 'assets/images/photo-5.jpg', caption: 'celebrating together' },
+  { src: 'assets/images/photo-6.jpg', caption: 'the trip we loved' },
+  { src: 'assets/images/photo-7.jpg', caption: 'just us' },
+  { src: 'assets/images/photo-8.jpg', caption: 'late night talks' },
+  { src: 'assets/images/photo-9.jpg', caption: 'that big smile' },
+  { src: 'assets/images/photo-10.jpg', caption: 'holding hands' },
+  { src: 'assets/images/photo-11.jpg', caption: 'dancing around' },
+  { src: 'assets/images/photo-12.jpg', caption: 'always us' }
+];
 
+galleryPhotos.forEach((photo, i) => {
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+  item.style.animationDelay = (i * 0.15) + 's';
+  item.innerHTML = `<img src="${photo.src}" alt="${photo.caption}" loading="lazy" />`;
+  item.addEventListener('click', () => openLightbox(photo.src, photo.caption));
+  galleryGrid.appendChild(item);
+});
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
