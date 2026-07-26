@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday My Cutu Baby ❤️</title>
+<meta name="description" content="A cinematic birthday surprise, made with love." />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<!-- ============================= -->
+<!-- CURSOR SPARKLE LAYER          -->
+<!-- ============================= -->
+<canvas id="cursor-canvas" aria-hidden="true"></canvas>
+
+<!-- ============================= -->
+<!-- 1. LOADING SCREEN             -->
+<!-- ============================= -->
+<section id="loading-screen" aria-label="Loading">
+  <div class="loading-inner">
+    <div class="loading-heart">
+      <svg viewBox="0 0 32 29" class="heart-svg">
+        <path d="M16 28.5 C16 28.5 1 18.7 1 8.9 C1 3.7 5 0.5 9.2 0.5 C12.3 0.5 14.7 2.3 16 5 C17.3 2.3 19.7 0.5 22.8 0.5 C27 0.5 31 3.7 31 8.9 C31 18.7 16 28.5 16 28.5 Z"/>
+      </svg>
+    </div>
+    <p class="loading-label">wrapping your gift</p>
+    <div class="loading-bar-track">
+      <div class="loading-bar-fill" id="loading-bar-fill"></div>
+    </div>
+    <p class="loading-percent" id="loading-percent">0%</p>
+  </div>
+  <div class="loading-sparkles" id="loading-sparkles"></div>
+</section>
+
+<!-- ============================= -->
+<!-- SOUND-ON PROMPT (autoplay gate)-->
+<!-- ============================= -->
+<button id="sound-gate" class="sound-gate" aria-label="Begin experience with sound">
+  <span class="sound-gate-heart">❤</span>
+  <span>Tap to begin</span>
+</button>
+
+<main id="site" hidden>
+
+  <!-- ============================= -->
+  <!-- 2. HERO SECTION                -->
+  <!-- ============================= -->
+  <section id="hero" class="section hero">
+    <div class="sky" id="sky">
+      <div class="moon"></div>
+      <div class="stars" id="stars-layer"></div>
+      <div class="clouds">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+      </div>
+      <div class="floating-hearts" id="hero-hearts"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">a little something for you</p>
+      <h1 class="hero-title">Happy Birthday<br />My Cutu Baby <span class="heart-emoji">❤️</span></h1>
+      <p class="hero-subtitle">You make my world brighter every day.</p>
+      <button id="open-surprise-btn" class="btn-glow">
+        <span>Open My Surprise</span>
+      </button>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 3. GIFT BOX                    -->
+  <!-- ============================= -->
+  <section id="gift" class="section gift-section">
+    <p class="section-eyebrow">step one</p>
+    <h2 class="section-title">A little gift, just for you</h2>
+    <p class="section-subtitle">Click the box to see what's inside</p>
+
+    <div class="gift-stage">
+      <div id="gift-box" class="gift-box" role="button" tabindex="0" aria-label="Open gift box">
+        <div class="gift-glow"></div>
+        <div class="gift-particles" id="gift-particles"></div>
+        <div class="box-lid">
+          <div class="ribbon-v"></div>
+          <div class="ribbon-h"></div>
+          <div class="bow">
+            <span class="bow-loop bow-loop-left"></span>
+            <span class="bow-loop bow-loop-right"></span>
+            <span class="bow-knot"></span>
+          </div>
+        </div>
+        <div class="box-base">
+          <div class="ribbon-v"></div>
+        </div>
+      </div>
+    </div>
+    <p class="tap-hint">tap the box</p>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 4 + 5. ENVELOPE + LETTER       -->
+  <!-- ============================= -->
+  <section id="envelope-section" class="section envelope-section">
+    <p class="section-eyebrow">step two</p>
+    <h2 class="section-title">A letter from my heart</h2>
+
+    <div class="envelope-stage">
+      <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Open envelope to read letter">
+
+        <div class="letter-paper" id="letter-paper">
+          <p class="letter-peek-heart">❤</p>
+        </div>
+
+        <div class="env-back"></div>
+        <div class="env-bottom-flap"></div>
+        <div class="env-left-flap"></div>
+        <div class="env-right-flap"></div>
+        <div class="env-front"></div>
+        <div class="env-top-flap"></div>
+        <div class="env-seal">❤</div>
+      </div>
+    </div>
+    <p class="tap-hint" id="envelope-hint">tap the envelope</p>
+  </section>
+
+  <!-- Dedicated letter-reading modal (independent of the envelope's DOM/transitions) -->
+  <div class="letter-modal" id="letter-modal" aria-hidden="true">
+    <div class="letter-modal-backdrop" id="letter-modal-backdrop"></div>
+    <div class="letter-modal-paper" role="dialog" aria-modal="true" aria-label="Birthday letter">
+      <button class="letter-close" id="letter-close" aria-label="Close letter">&times;</button>
+      <p class="letter-heart-mark">❤</p>
+      <div id="typewriter-text" class="typewriter-text"></div>
+      <div class="letter-heart-particles" id="letter-heart-particles"></div>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- 6. OUR STORY TIMELINE          -->
+  <!-- ============================= -->
+  <section id="story" class="section story-section">
+    <p class="section-eyebrow">our story</p>
+    <h2 class="section-title">Every moment, a memory</h2>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot">❤️</div>
+        <div class="timeline-card">
+          <h3>The day we met</h3>
+          <p>The moment our worlds quietly collided, and everything after made a little more sense.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot">💕</div>
+        <div class="timeline-card">
+          <h3>Our first conversation</h3>
+          <p>Hours felt like minutes. I already knew I wanted more of your words in my life.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot">📱</div>
+        <div class="timeline-card">
+          <h3>Endless video calls</h3>
+          <p>Distance never stood a chance against how much we had to say to each other.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot">🤝</div>
+        <div class="timeline-card">
+          <h3>Supporting each other</h3>
+          <p>Through every hard day, you were the calm I could always come home to.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot">😊</div>
+        <div class="timeline-card">
+          <h3>Countless smiles</h3>
+          <p>You have a way of turning ordinary moments into my favorite ones.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot">❤️</div>
+        <div class="timeline-card">
+          <h3>Today</h3>
+          <p>Celebrating you, and everything beautiful you bring into my life.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot">♾️</div>
+        <div class="timeline-card">
+          <h3>Future forever</h3>
+          <p>Whatever comes next, I want it written with you in it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 7. PHOTO GALLERY               -->
+  <!-- ============================= -->
+  <section id="gallery" class="section gallery-section">
+    <p class="section-eyebrow">forever memories</p>
+    <h2 class="section-title">Moments worth keeping</h2>
+
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- populated by JS with 12 placeholder photo tiles -->
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close photo">&times;</button>
+    <img src="" alt="" id="lightbox-img" />
+  </div>
+
+  <!-- ============================= -->
+  <!-- 8. VIDEO SURPRISE               -->
+  <!-- ============================= -->
+  <section id="video" class="section video-section">
+    <p class="section-eyebrow">watch this</p>
+    <h2 class="section-title">A little surprise for you</h2>
+
+    <div class="video-frame">
+      <video id="birthday-video" controls playsinline poster="assets/images/video-poster.jpg">
+        <source src="assets/videos/birthday-surprise.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-glow"></div>
+    </div>
+    <p class="video-caption">Add your own video at <code>assets/videos/birthday-surprise.mp4</code></p>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 9. REASONS I LOVE YOU           -->
+  <!-- ============================= -->
+  <section id="reasons" class="section reasons-section">
+    <p class="section-eyebrow">just a few reasons</p>
+    <h2 class="section-title">Why I love you</h2>
+
+    <div class="reasons-grid" id="reasons-grid">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 10. BIRTHDAY WISHES              -->
+  <!-- ============================= -->
+  <section id="wishes" class="section wishes-section">
+    <p class="section-eyebrow">a few wishes</p>
+    <h2 class="section-title">For you, today and always</h2>
+
+    <div class="wishes-stage" id="wishes-stage">
+      <!-- populated by JS, fades one after another -->
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 11. MEMORY COUNTER               -->
+  <!-- ============================= -->
+  <section id="counter" class="section counter-section">
+    <p class="section-eyebrow">us, in numbers</p>
+    <h2 class="section-title">What we've built together</h2>
+
+    <div class="counter-grid">
+      <div class="counter-card">
+        <p class="counter-number" data-target="3120" id="c-hours">0</p>
+        <p class="counter-label">Hours talked</p>
+      </div>
+      <div class="counter-card">
+        <p class="counter-number" data-target="480" id="c-calls">0</p>
+        <p class="counter-label">Video calls</p>
+      </div>
+      <div class="counter-card">
+        <p class="counter-number" data-target="365" id="c-days">0</p>
+        <p class="counter-label">Days together</p>
+      </div>
+      <div class="counter-card">
+        <p class="counter-number" data-target="9999" id="c-memories">0</p>
+        <p class="counter-label">Memories created</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 13. FINAL SURPRISE               -->
+  <!-- ============================= -->
+  <section id="finale" class="section finale-section">
+    <canvas id="finale-canvas"></canvas>
+    <div class="finale-balloons" id="finale-balloons"></div>
+    <div class="finale-petals" id="finale-petals"></div>
+
+    <div class="finale-content">
+      <div class="finale-heart">❤️</div>
+      <h2 class="finale-title">Happy Birthday<br />My Cutu Baby <span>❤️</span></h2>
+      <p class="finale-sub">I Love You Forever ❤️</p>
+      <p class="finale-signature">Love,<br />Chandra ❤️</p>
+      <button id="replay-btn" class="btn-glow btn-outline">Watch Again</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- 12. FLOATING MUSIC PLAYER       -->
+<!-- ============================= -->
+<div id="music-player" class="music-player" hidden>
+  <audio id="bg-audio" loop preload="none">
+    <source src="assets/music/background-song.mp3" type="audio/mpeg" />
+  </audio>
+  <button id="music-toggle" class="music-toggle" aria-label="Play or pause music">
+    <span class="music-bars"><span></span><span></span><span></span></span>
+  </button>
+  <div class="music-info">
+    <p class="music-song-name">Our Song</p>
+    <input type="range" id="music-volume" min="0" max="1" step="0.01" value="0.5" aria-label="Volume" />
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
