@@ -1,0 +1,88 @@
+/* =========================================================
+   RESPONSIVE — Desktop first, scaling down to mobile.
+   No horizontal overflow at any breakpoint.
+   ========================================================= */
+
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* ---------- Laptop / small desktop ---------- */
+@media (max-width: 1100px) {
+  .reasons-grid { grid-template-columns: repeat(4, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 860px) {
+  .section { padding: 4.5rem 1.25rem; }
+
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .reasons-grid { grid-template-columns: repeat(3, 1fr); }
+  .counter-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .timeline-line { left: 24px; }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    padding-left: 3.5rem;
+    padding-right: 0.5rem;
+    text-align: left;
+    transform: translateX(20px);
+  }
+
+  .timeline-item.in-view { transform: translateX(0); }
+
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: 2px;
+    right: auto;
+  }
+
+  .envelope { width: 280px; height: 190px; }
+  .gift-box { width: 190px; height: 190px; }
+
+  .music-player { bottom: 1rem; right: 1rem; padding: 0.5rem 0.85rem; }
+  #music-volume { width: 60px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 560px) {
+  .section { padding: 3.5rem 1rem; }
+
+  .hero-title { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .section-title { font-size: clamp(2rem, 8vw, 2.6rem); }
+
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .reasons-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+  .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  .envelope { width: 250px; height: 170px; }
+  .letter-modal-paper { width: 92vw; max-height: 82vh; padding: 2.25rem 1.25rem 2rem; }
+  .typewriter-text { font-size: 0.95rem; min-height: 0; }
+
+  .gift-box { width: 160px; height: 160px; }
+
+  .timeline-card { padding: 1.1rem; }
+  .timeline-card h3 { font-size: 1.3rem; }
+
+  .finale-title { font-size: clamp(2rem, 9vw, 2.8rem); }
+  .finale-heart { font-size: 3.5rem; }
+
+  .music-player {
+    left: 1rem;
+    right: 1rem;
+    justify-content: space-between;
+  }
+
+  #music-volume { width: 50vw; max-width: 120px; }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 360px) {
+  .gallery-grid, .reasons-grid, .counter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .envelope { width: 220px; height: 150px; }
+}
