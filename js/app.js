@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const item = document.createElement('div');
     item.className = 'gallery-item';
     item.style.animationDelay = (i * 0.15) + 's';
-    item.innerHTML = `<img src="https://picsum.photos/seed/${seed}/500/500" alt="${caption}" loading="lazy" />`;
+    item.innerHTML = `<img src="assets/images/20251013_081450.jpeg" alt="${caption}" loading="lazy" />`;
     item.addEventListener('click', () => openLightbox(item.querySelector('img').src, caption));
     galleryGrid.appendChild(item);
   });
