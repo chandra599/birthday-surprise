@@ -225,22 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================= */
   /* 7. GALLERY                      */
   /* ============================= */
-  const galleryGrid = document.getElementById('gallery-grid');
-  const galleryCaptions = [
-    'that afternoon', 'our favorite spot', 'silly faces', 'quiet moments',
-    'celebrating together', 'the trip we loved', 'just us', 'late night talks',
-    'that big smile', 'holding hands', 'dancing around', 'always us'
-  ];
 
-  galleryCaptions.forEach((caption, i) => {
-    const seed = `cutu-baby-${i + 1}`;
-    const item = document.createElement('div');
-    item.className = 'gallery-item';
-    item.style.animationDelay = (i * 0.15) + 's';
-    item.innerHTML = `<img src="assets/images/20251013_081450.jpeg" alt="${caption}" loading="lazy" />`;
-    item.addEventListener('click', () => openLightbox(item.querySelector('img').src, caption));
-    galleryGrid.appendChild(item);
-  });
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
