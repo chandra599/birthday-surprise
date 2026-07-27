@@ -234,6 +234,14 @@ const galleryPhotos = [
   { src: 'assets/images/photo-5.jpg', caption: 'celebrating together' },
   { src: 'assets/images/photo-6.jpg', caption: 'the trip we loved' },
   { src: 'assets/images/photo-7.jpg', caption: 'just us' }
+  { src: 'assets/images/photo-8.jpg', caption: 'just us' }
+  { src: 'assets/images/photo-9.jpg', caption: 'just us' }
+  { src: 'assets/images/photo-10.jpg', caption: 'just us' }
+  { src: 'assets/images/photo-11.jpg', caption: 'just us' }
+  { src: 'assets/images/photo-12.jpg', caption: 'just us' }
+  { src: 'assets/images/photo-13.jpg', caption: 'just us' }
+  { src: 'assets/images/photo-14.jpg', caption: 'just us' }
+  { src: 'assets/images/photo-15.jpg', caption: 'just us' } 
 ];
 
 galleryPhotos.forEach((photo, i) => {
