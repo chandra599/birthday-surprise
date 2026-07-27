@@ -227,21 +227,21 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================= */
 const galleryGrid = document.getElementById('gallery-grid');
 const galleryPhotos = [
-  { src: 'assets/images/photo-1.jpg', caption: 'that afternoon' },
+  { src: 'assets/images/photo-1.jpeg', caption: 'that afternoon' },
   { src: 'assets/images/photo-2.jpg', caption: 'our favorite spot' },
   { src: 'assets/images/photo-3.jpg', caption: 'silly faces' },
   { src: 'assets/images/photo-4.jpg', caption: 'quiet moments' },
   { src: 'assets/images/photo-5.jpg', caption: 'celebrating together' },
   { src: 'assets/images/photo-6.jpg', caption: 'the trip we loved' },
-  { src: 'assets/images/photo-7.jpg', caption: 'just us' }
-  { src: 'assets/images/photo-8.jpg', caption: 'just us' }
-  { src: 'assets/images/photo-9.jpg', caption: 'just us' }
-  { src: 'assets/images/photo-10.jpg', caption: 'just us' }
-  { src: 'assets/images/photo-11.jpg', caption: 'just us' }
-  { src: 'assets/images/photo-12.jpg', caption: 'just us' }
-  { src: 'assets/images/photo-13.jpg', caption: 'just us' }
-  { src: 'assets/images/photo-14.jpg', caption: 'just us' }
-  { src: 'assets/images/photo-15.jpg', caption: 'just us' } 
+  { src: 'assets/images/photo-7.jpg', caption: 'just us' },
+  { src: 'assets/images/photo-8.jpeg', caption: 'just us' },
+  { src: 'assets/images/photo-9.jpg', caption: 'just us' },
+  { src: 'assets/images/photo-10.jpg', caption: 'just us' },
+  { src: 'assets/images/photo-11.jpg', caption: 'just us' },
+  { src: 'assets/images/photo-12.jpg', caption: 'just us' },
+  { src: 'assets/images/photo-13.jpeg', caption: 'just us' },
+  { src: 'assets/images/photo-14.jpeg', caption: 'just us' },
+  { src: 'assets/images/photo-15.jpeg', caption: 'just us' } 
 ];
 
 galleryPhotos.forEach((photo, i) => {
