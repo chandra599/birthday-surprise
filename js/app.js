@@ -273,7 +273,7 @@ galleryPhotos.forEach((photo, i) => {
   /* ============================= */
   const reasonsGrid = document.getElementById('reasons-grid');
   const reasons = [
-    { icon: '😊', title: 'Your smile', back: 'It lights up every room you walk into.' },
+    { icon: '😊', title: 'Your smile', back: 'Your smile has the magical power to turn even my toughest days into beautiful ones.' },
     { icon: '💗', title: 'Your kindness', back: 'You make everyone around you feel cared for.' },
     { icon: '🕊️', title: 'Your patience', back: 'Thank you for being Patient with my flaws, my mistakes, and my imperfections.' },
     { icon: '❤️', title: 'Your caring heart', back: 'You notice what I need before I say it.' },
