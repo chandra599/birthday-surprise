@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'I Love You Forever ❤️',
     '',
     'Love,',
-    'Chandra ❤️'
+    'Your Gulab Jamun ❤️'
   ];
 
   function typewrite(el, lines, speed = 28) {
@@ -241,7 +241,8 @@ const galleryPhotos = [
   { src: 'assets/images/photo-12.jpg', caption: 'just us' },
   { src: 'assets/images/photo-13.jpeg', caption: 'just us' },
   { src: 'assets/images/photo-14.jpeg', caption: 'just us' },
-  { src: 'assets/images/photo-15.jpeg', caption: 'just us' } 
+  { src: 'assets/images/photo-15.jpeg', caption: 'just us' },
+  { src: 'assets/images/photo-16.jpeg', caption: 'just us' }
 ];
 
 galleryPhotos.forEach((photo, i) => {
@@ -274,7 +275,7 @@ galleryPhotos.forEach((photo, i) => {
   const reasons = [
     { icon: '😊', title: 'Your smile', back: 'It lights up every room you walk into.' },
     { icon: '💗', title: 'Your kindness', back: 'You make everyone around you feel cared for.' },
-    { icon: '🕊️', title: 'Your patience', back: 'You never rush love, even when I test it.' },
+    { icon: '🕊️', title: 'Your patience', back: 'Thank you for being Patient with my flaws, my mistakes, and my imperfections.' },
     { icon: '❤️', title: 'Your caring heart', back: 'You notice what I need before I say it.' },
     { icon: '🌸', title: 'Your honesty', back: 'With you, I never have to guess.' },
     { icon: '😂', title: 'Your laughter', back: 'It is my favorite sound in the world.' },
