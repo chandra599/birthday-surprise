@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     musicPlayer.hidden = false;
 
     // Attempt autoplay now that we have a user gesture.
-    bgAudio.volume = 0.5;
+    bgAudio.volume = parseFloat(musicVolume.value);
     bgAudio.play().catch(() => {
       // Autoplay might still be blocked; the player UI lets the user start it.
       musicPlayer.classList.add('paused');
