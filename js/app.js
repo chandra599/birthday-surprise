@@ -242,7 +242,7 @@ const galleryPhotos = [
   { src: 'assets/images/photo-13.jpeg', caption: 'just us' },
   { src: 'assets/images/photo-14.jpeg', caption: 'just us' },
   { src: 'assets/images/photo-15.jpeg', caption: 'just us' },
-  { src: 'assets/images/photo-16.jpeg', caption: 'just us' }
+  { src: 'assets/images/photo-16.jpg', caption: 'just us' }
 ];
 
 galleryPhotos.forEach((photo, i) => {
